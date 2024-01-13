@@ -1,0 +1,11 @@
+---
+- name: Configure Vector | ensure what directory exists
+  file:
+    path: "/media/sf_distr/ansible-homeworks/ansible-homeworks-02/vector"
+    state: directory
+    mode: 0644
+- name: Configure Vector | Template config
+  ansible.builtin.template:
+    src: vector.yml.j2
+    mode: 0644
+    dest: "/media/sf_distr/ansible-homeworks/ansible-homeworks-02/vector/vector.yml"
