@@ -1,5 +1,16 @@
 ---
-  clickhouse:
-    hosts:
-      clickhouse-01:
-        ansible_connection: docker
+clickhouse:
+  hosts:
+    clickhouse-01:
+      ansible_connection: ssh
+      ansible_ssh_user: user
+      ansible_host: 84.201.162.250
+      ansible_private_key_file: ~/.ssh/id_ed25519
+
+vector:
+  hosts:
+    vector-01:
+      ansible_connection: ssh
+      ansible_ssh_user: user
+      ansible_host: 51.250.25.23
+      ansible_private_key_file: ~/.ssh/id_ed25519
